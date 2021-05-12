@@ -1,14 +1,19 @@
 package com.example.konnect;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +29,19 @@ public class phone_call extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_call);
+
+        //below code for action bar
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#138E15")));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this,R.color.green);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
+
+        getSupportActionBar().setTitle("Call");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mEditTextNumber = findViewById(R.id.edit_text_number);
         ImageView imageCall = findViewById(R.id.image_call);

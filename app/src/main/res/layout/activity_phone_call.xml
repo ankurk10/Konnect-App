@@ -9,6 +9,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="#138E15"
+        android:textColorHint="#138E15"
+        app:hintTextColor="#138E15"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginStart="32dp"
@@ -36,4 +39,18 @@
         android:tint="#279713"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/pacifico"
+        android:text="Call Us"
+        android:textColor="#279713"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
 </androidx.constraintlayout.widget.ConstraintLayout>

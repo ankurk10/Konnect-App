@@ -1,8 +1,14 @@
 package com.example.konnect;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +22,19 @@ public class EmailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email);
+
+        //below code for action bar
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#EA4335")));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this,R.color.red);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
+
+        getSupportActionBar().setTitle("Email");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sender_email = findViewById(R.id.sender_email);
         subject = findViewById(R.id.email_subject);

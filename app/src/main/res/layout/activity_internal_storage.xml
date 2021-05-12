@@ -10,6 +10,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeColor="@color/teal_700"
+        android:textColorHint="@color/teal_700"
+        app:hintTextColor="@color/teal_700"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginStart="32dp"
@@ -29,9 +32,12 @@
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="wrap_content"
+        android:backgroundTint="@color/teal_700"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
         android:text="save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,13 +46,29 @@
 
     <Button
         android:id="@+id/button_load"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:backgroundTint="@color/teal_700"
         android:layout_marginTop="32dp"
         android:text="load"
         android:onClick="load"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_save" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/pacifico"
+        android:text="Send Us Data"
+        android:textColor="@color/teal_700"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

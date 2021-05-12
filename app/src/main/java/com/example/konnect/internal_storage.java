@@ -1,7 +1,13 @@
 package com.example.konnect;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -25,6 +31,21 @@ public class internal_storage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internal_storage);
         input = findViewById(R.id.edit_text_data);
+
+        //below code for action bar
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#018786")));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this, R.color.teal_700);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
+
+        getSupportActionBar().setTitle("Storage");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
     }
 
     public void save (View v)

@@ -4,47 +4,181 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E1ECEA"
     tools:context=".MainActivity">
+
 
     <Button
         android:id="@+id/button_call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CALL"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
-    <Button
-        android:id="@+id/button_storage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="Send data"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/galada"
+        android:text="Call Us"
+        android:textAllCaps="false"
+        android:textColor="#138E15"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_send_message"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button_storage"
+        app:strokeColor="#138E15"
+        app:strokeWidth="1dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_storage"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/galada"
+        android:text="Send Us Data"
+        android:textAllCaps="false"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_email"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="@color/teal_700"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="send email"
-        app:layout_constraintBottom_toTopOf="@+id/button_call"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/galada"
+        android:text="Send Us an Email"
+        android:textAllCaps="false"
+        android:textColor="#EA4335"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_storage"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="#EA4335"
+        app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/btn_send_message"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/galada"
+        android:text="Send SMS"
+        android:textAllCaps="false"
+        android:textColor="#C39C28"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_call"
+        app:layout_constraintTop_toBottomOf="@+id/button_email"
+        app:strokeColor="#C39C28"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Send SMS"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/pacifico"
+        android:text="Connect With ACM"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/pacifico"
+        android:text="Follow Us"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_call" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:tint="#EA4335"
+        app:layout_constraintBottom_toBottomOf="@+id/button_email"
+        app:layout_constraintEnd_toEndOf="@+id/button_email"
+        app:layout_constraintStart_toStartOf="@+id/button_email"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="37dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="16dp"
+        android:tint="#138E15"
+        app:layout_constraintBottom_toBottomOf="@+id/button_call"
+        app:layout_constraintEnd_toEndOf="@+id/button_call"
+        app:layout_constraintStart_toStartOf="@+id/button_call"
+        app:srcCompat="@drawable/ic_baseline_phone_24" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="16dp"
+        android:tint="#C39C28"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_send_message"
+        app:layout_constraintEnd_toEndOf="@+id/btn_send_message"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="@+id/btn_send_message"
+        app:srcCompat="@android:drawable/sym_action_email" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="31dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="14dp"
+        android:tint="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="@+id/button_storage"
+        app:layout_constraintEnd_toEndOf="@+id/button_storage"
+        app:layout_constraintStart_toStartOf="@+id/button_storage"
+        app:srcCompat="@drawable/baseline_upload_file_black_36" />
+
+    <ImageView
+        android:id="@+id/fb_image"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/insta_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/baseline_facebook_black_48" />
+
+    <ImageView
+        android:id="@+id/insta_image"
+        android:layout_width="58dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="125dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fb_image"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/instagram_icon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
