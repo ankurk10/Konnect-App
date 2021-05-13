@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton logout = findViewById(R.id.button_logout);
 
-        ImageView facebook = findViewById(R.id.fb_image);
-        ImageView instagram = findViewById(R.id.insta_image);
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             int startColor = getWindow().getStatusBarColor();
@@ -90,4 +87,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void open_fb(View view) {
+        openUrl("https://www.facebook.com/AssociationForComputingMachinery/");
+    }
+
+    private void openUrl(String s) {
+        Uri uri = Uri.parse(s);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    public void open_insta(View view) {
+        openUrl2("https://www.instagram.com/ipec_acm_chapter/");
+    }
+    private void openUrl2(String s) {
+        Uri uri = Uri.parse(s);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
 }
