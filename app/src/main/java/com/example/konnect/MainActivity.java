@@ -1,10 +1,13 @@
 package com.example.konnect;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView facebook = findViewById(R.id.fb_image);
         ImageView instagram = findViewById(R.id.insta_image);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            int startColor = getWindow().getStatusBarColor();
+            int endColor = ContextCompat.getColor(this,R.color.main_act_color);
+            ObjectAnimator.ofArgb(getWindow(), "statusBarColor", startColor, endColor).start();
+        }
 
 
         button.setOnClickListener(new View.OnClickListener() {
