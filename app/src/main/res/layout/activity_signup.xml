@@ -44,8 +44,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,8 +67,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signnup_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Password" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button"
+        android:id="@+id/signup_button"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,16 +107,16 @@
 
 
     <TextView
-        android:id="@+id/tv_signup"
+        android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Already have an account? Login"
-        android:textSize="12dp"
         android:textColor="@color/white"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
