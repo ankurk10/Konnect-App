@@ -73,7 +73,7 @@ public class SmsActivity extends AppCompatActivity {
         try {
             SmsManager smsManager  = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNo, null, SMS, null, null);
-            Toast.makeText(this, "Message is Sent", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Message Sent Successfully", Toast.LENGTH_SHORT).show();
         }
         catch(Exception e)
         {
